@@ -12,7 +12,7 @@ console.log('Advertising on namespace ID: ' + id + ' on instance: ' + id)
 var namespaceId = '00010203040506070809';
 var instanceId = 'aabbccddeeff';
 
-eddystoneBeacon.advertiseUid(namespaceId, instanceId, [options]);
+// eddystoneBeacon.advertiseUid(namespaceId, instanceId, [options]);
 
 // var url = 'jeeves://' + id;
-// eddystoneBeacon.advertiseUrl('jeeves://' + id, [options]);
+eddystoneBeacon.advertiseUrl('http://' + id, [options]);
