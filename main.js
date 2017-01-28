@@ -1,18 +1,18 @@
 var eddystoneBeacon = require('eddystone-beacon');
+
+
+var id = process.argv[2] || 0;
+var name = process.argv[3] || 'Anonymous Name';
+
 var options = {
-  name: 'Beacon',    // set device name when advertising (Linux only)
+  name: name,    // set device name when advertising (Linux only)
   txPowerLevel: -100, // override TX Power Level, default value is -21,
   tlmCount: 2,       // 2 TLM frames
   tlmPeriod: 10      // every 10 advertisements
 };
 
-var id = process.argv[2] || 0;
+var url = 'http://' + id;
 
-console.log('Advertising on namespace ID: ' + id + ' on instance: ' + id)
-var namespaceId = '00010203040506070809';
-var instanceId = 'aabbccddeeff';
+console.log('Advertising on url: ' + url + ' with name: ' + name)
 
-// eddystoneBeacon.advertiseUid(namespaceId, instanceId, [options]);
-
-// var url = 'jeeves://' + id;
-eddystoneBeacon.advertiseUrl('http://' + id, [options]);
+eddystoneBeacon.advertiseUrl(url, [options]);
